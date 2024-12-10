@@ -6,22 +6,9 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-const messages = [
-  {
-    text: "How d'ya",
-    user: "Arthur",
-    added: new Date()
-  },
-  {
-    text: "Hey mister",
-    user: "John",
-    added: new Date()
-  }
-];
+const indexRouter = require("./routes/indexRouter");
 
-app.get("/", (req, res) => {
-  res.render("index", { messages: messages });
-})
+app.use("/", indexRouter); 
 
 const PORT = 3000;
 app.listen(PORT, () =>{
