@@ -1,0 +1,14 @@
+<html>
+  <head></head>
+  <body>
+    <ul>
+      <% for (let i = 0; i < messages.length; i++){ %>
+        <li>
+          <p>User: <%=messages[i].user;%></p>
+          <p>Message: <%=messages[i].text;%></p>
+          <p>Added: <%=messages[i].added;%></p>
+        </li>
+      <%}%>
+    </ul>
+  </body>
+</html>
